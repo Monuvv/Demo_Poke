@@ -9,15 +9,13 @@ import { PokeDetailsComponent } from './poke-details/poke-details.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
-import { FilterAbilityPipe } from './filter-ability.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     PokeDetailsComponent,
-    FilterPipe,
-    FilterAbilityPipe
+    FilterPipe
   ],
   imports: [
     HttpClientModule,
