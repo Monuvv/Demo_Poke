@@ -1,0 +1,51 @@
+.poke-card
+{
+display: grid;
+grid-gap: 16px;
+padding: 20px;
+grid-template-columns: repeat(auto-fit,minmax(23%,1fr));
+}
+
+.poke-card .box
+{
+width: 100%;
+height: 300px;
+text-align: center;
+display: grid;
+box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.poke-card .box img{
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+.search-div
+{
+  text-align: right;
+}
+.searchBox{
+  margin-left: 10px;margin-right: 20px; padding: 7px; margin-top: 10px;
+}
+.btn-default
+{
+  background-color: #857ae0; /* Green */
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+.sort-div
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  margin-bottom: 40px;
+}
+pagination-controls {
+  text-align: center;
+}

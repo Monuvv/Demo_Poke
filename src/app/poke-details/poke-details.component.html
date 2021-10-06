@@ -1,0 +1,47 @@
+<div class="search-div"><span>Search</span>
+  <input class ="searchBox" [(ngModel)]="searchText"  placeholder="Search by..">
+  <div class ="sort-div">
+  <div class ="searchBox">Sort By <button [ngClass]="[btnStyle]" (click)="sortByName()">Name</button></div>
+  <div class ="searchBox">Sort By <button [ngClass]="[btnStyle]" (click)="sortByHeight()">Height</button></div>
+  <div class ="searchBox">Sort By <button [ngClass]="[btnStyle]" (click)="sortByWeight()">Wight</button></div>
+</div>
+
+<div style="display: flex;justify-content: center;">
+  <pagination-controls (pageChange) = "page = $event; pokeList= []; getDetails()"></pagination-controls>
+  <select style="width:100px;margin-left: 40px;
+  height: 20px;" [(ngModel)]="noOfRows" (change)="getDetails($event.target.value)">
+    <option>10</option>
+    <option>20</option>
+    <option>50</option>
+  </select>
+  </div>
+
+
+<div class="poke-card">
+  <div class="box"
+  *ngFor="let poke of pokeList | paginate: {itemsPerPage:noOfRows, currentPage: page, totalItems :pokeNumbers} | filter : searchText">
+    <img [src]="poke.sprites.front_default" alt="pokemon">
+    <p><b>Name: {{ poke.name }}</b></p>
+    <p>
+      <b>Height: {{ poke.height }}</b>
+    </p>
+    <p>
+      <b>Weight: {{ poke.weight }}</b>
+    </p>
+    <p>
+      <b>Abilities: </b>
+    </p>
+    <b> <ol style="list-style-type:none;" *ngFor="let abi of poke.abilities | filterAbility : searchText"><li>{{ abi.ability.name }}</li></ol></b>
+  </div>
+
+</div>
+</div>
+<div style="display: flex;justify-content: center;">
+<pagination-controls (pageChange) = "page = $event; pokeList= []; getDetails()"></pagination-controls>
+<select style="width:100px;margin-left: 40px;
+height: 20px;" [(ngModel)]="noOfRows" (change)="getDetails($event.target.value)">
+  <option>10</option>
+  <option>20</option>
+  <option>50</option>
+</select>
+</div>

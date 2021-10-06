@@ -1,0 +1,11 @@
+header{
+  text-align: center;
+  padding: 10px 0px;
+  background-color: cadetblue;
+}
+header h1{
+text-transform: uppercase;
+color: white;
+font-size: 30px;
+letter-spacing: 2px;
+}
