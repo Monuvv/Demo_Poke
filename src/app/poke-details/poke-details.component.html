@@ -3,7 +3,7 @@
   <div class ="sort-div">
   <div class ="searchBox">Sort By <button [ngClass]="[btnStyle]" (click)="sortByName()">Name</button></div>
   <div class ="searchBox">Sort By <button [ngClass]="[btnStyle]" (click)="sortByHeight()">Height</button></div>
-  <div class ="searchBox">Sort By <button [ngClass]="[btnStyle]" (click)="sortByWeight()">Wight</button></div>
+  <div class ="searchBox">Sort By <button [ngClass]="[btnStyle]" (click)="sortByWeight()">Weight</button></div>
 </div>
 
 <div style="display: flex;justify-content: center;">
@@ -37,9 +37,10 @@
 </div>
 </div>
 <div style="display: flex;justify-content: center;">
-<pagination-controls (pageChange) = "page = $event; pokeList= []; getDetails()"></pagination-controls>
+<pagination-controls (pageChange) = "page = $event; pokeList= []; getDetails()" directionLinks="true"
+autoHide="true"></pagination-controls>
 <select style="width:100px;margin-left: 40px;
-height: 20px;" [(ngModel)]="noOfRows" (change)="getDetails($event.target.value)">
+height: 20px;" [(ngModel)]="noOfRows" (change)="getDetails($event.target.value)" >
   <option>10</option>
   <option>20</option>
   <option>50</option>

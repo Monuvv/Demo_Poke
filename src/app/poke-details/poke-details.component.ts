@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BaseService } from '../services/base.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class PokeDetailsComponent implements OnInit {
   noOfRows = 10;
   pokeNumbers : number;
   btnStyle = 'btn-default';
-  constructor(private baseService: BaseService) { }
+  constructor(private baseService: BaseService,private router: Router) { }
 
   ngOnInit() {
     this.getDetails();
@@ -31,7 +32,6 @@ export class PokeDetailsComponent implements OnInit {
       numbersAsString = `${this.page}${0}`;
     }
 
-    console.log("here"+numbersAsString );
     this.baseService.getPokeDetails(numbersAsString ,this.noOfRows).subscribe((res:any) =>
       {
         this.pokeNumbers = res.count;
